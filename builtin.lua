@@ -54,7 +54,10 @@ if xp_redo.enable_death_malus then
 		if player and player:is_player() then
 			if not death_limiter(player:get_player_name()) then
 				-- one death in 60 seconds
-				xp_redo.add_xp(player:get_player_name(), -1000)
+				local xp = xp_redo.get_xp(player:get_player_name())
+				if xp > 10000 then
+					xp_redo.add_xp(player:get_player_name(), -1000)
+				end
 			end
 		end
 	end);

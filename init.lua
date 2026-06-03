@@ -13,7 +13,7 @@ xp_redo = {
 	enable_dignode_rewards = minetest.settings:get_bool("xp.enable_dignode_rewards"),
 
 	-- xp penalty on player death
-	enable_death_malus = minetest.settings:get_bool("xp.enable_death_malus", true),
+	enable_death_malus = minetest.settings:get_bool("xp.enable_death_malus", false),
 
 	-- digging rate limiter
 	limit_dig_rate = tonumber(minetest.settings:get("xp.limit_dig_rate")),
