@@ -30,3 +30,15 @@ minetest.register_chatcommand("highscore", {
       end
     end,
 })
+
+core.register_chatcommand("getxp", {
+  params = "<name>",
+  description = "See a player's XP",
+  privs = {interact = true},
+  func = function(name, param)
+    local xp = xp_redo.get_xp(param)
+    if xp then
+      core.chat_send_player(name, "The player " .. param .. " has " .. xp .. " xp.")
+    end
+  end
+})
